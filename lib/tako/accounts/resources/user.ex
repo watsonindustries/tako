@@ -6,6 +6,15 @@ defmodule Tako.Accounts.User do
     repo Tako.Repo
   end
 
+  code_interface do
+    define_for Tako.Accounts
+    define :create, action: :create
+    define :read_all, action: :read
+    define :update, action: :update
+    define :destroy, action: :destroy
+    define :get_by_id, args: [:id], action: :by_id
+  end
+
   actions do
     # Exposes default built in actions to manage the resource
     defaults [:create, :read, :update, :destroy]
