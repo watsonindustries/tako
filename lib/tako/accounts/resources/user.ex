@@ -1,5 +1,5 @@
 defmodule Tako.Accounts.User do
-  use Ash.Resource, data_layer: AshPostgres.DataLayer
+  use Ash.Resource, data_layer: AshPostgres.DataLayer, extensions: [AshJsonApi.Resource]
 
   postgres do
     table "users"
@@ -13,6 +13,18 @@ defmodule Tako.Accounts.User do
     define :update, action: :update
     define :destroy, action: :destroy
     define :get_by_id, args: [:id], action: :by_id
+  end
+
+  json_api do
+    type "user"
+
+    routes do
+      base("/users")
+
+      get(:read)
+      index :read
+      post(:create)
+    end
   end
 
   actions do

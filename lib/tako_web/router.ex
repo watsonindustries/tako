@@ -5,8 +5,10 @@ defmodule TakoWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", TakoWeb do
-    pipe_through :api
+  scope "/api/json" do
+    pipe_through(:api)
+
+    forward "/accounts", Tako.Accounts.Router
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

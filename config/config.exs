@@ -10,6 +10,14 @@ config :ash, :use_all_identities_in_manage_relationship?, false
 config :tako,
   ash_apis: [Tako.Accounts]
 
+config :mime, :extensions, %{
+  "json" => "application/json"
+}
+
+config :mime, :types, %{
+  "application/vnd.api+json" => ["json"]
+}
+
 config :tako, TakoWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [
