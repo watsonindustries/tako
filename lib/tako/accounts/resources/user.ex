@@ -24,6 +24,7 @@ defmodule Tako.Accounts.User do
       get(:read)
       index :read
       post(:create)
+      patch(:update)
     end
   end
 
