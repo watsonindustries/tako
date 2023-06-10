@@ -15,7 +15,9 @@ defmodule TakoWeb.NotificationsChannel do
   end
 
   @impl true
-  def handle_in("collected", _payload, socket) do
+  def handle_in("collected", %{"nickname" => nickname} = _payload, socket) do
+    # fan out the same payload, but check that nickname is there
+    broadcast!(socket, "collected-broadcast", %{nickname: nickname})
     {:noreply, socket}
   end
 
