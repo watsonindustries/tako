@@ -5,6 +5,8 @@ defmodule TakoWeb.Router do
     plug CORSPlug,
       origin: "*"
 
+    plug TakoWeb.AuthPlug
+
     # origin: ["http://localhost", "https://localhost", "https://holoquest.hololivefanbooth.com"]
 
     plug :accepts, ["json"]
