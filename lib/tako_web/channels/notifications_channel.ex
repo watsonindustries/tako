@@ -4,6 +4,8 @@ defmodule TakoWeb.NotificationsChannel do
   """
   use TakoWeb, :channel
 
+  intercept ["msg", "ping"]
+
   @spec ping_all :: :noconnect | :nosuspend | :ok
   def ping_all() do
     Process.send(self(), :ping, [])
@@ -37,6 +39,15 @@ defmodule TakoWeb.NotificationsChannel do
   @impl true
   def handle_in("shout", payload, socket) do
     broadcast(socket, "shout", payload)
+    {:noreply, socket}
+  end
+
+  @impl true
+  def handle_out("msg", %{user_id: user_id} = msg, socket) do
+    if user_id == socket.assigns.user_token do
+      push(socket, "msg", msg)
+    end
+
     {:noreply, socket}
   end
 
