@@ -11,6 +11,8 @@ defmodule TakoWeb.Endpoint do
     same_site: "Lax"
   ]
 
+  plug CORSPlug, origin: "*"
+
   socket "/socket", TakoWeb.UserSocket,
     websocket: true,
     longpoll: false

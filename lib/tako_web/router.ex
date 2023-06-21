@@ -2,9 +2,6 @@ defmodule TakoWeb.Router do
   use TakoWeb, :router
 
   pipeline :api do
-    plug CORSPlug,
-      origin: "*"
-
     plug TakoWeb.AuthPlug
 
     # origin: ["http://localhost", "https://localhost", "https://holoquest.hololivefanbooth.com"]
