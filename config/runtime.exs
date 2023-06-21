@@ -67,4 +67,5 @@ if config_env() == :prod do
     check_origin: ["https://holoquest.hololivefanbooth.com", "//*.netlify.app"]
 else
   config :tako, :holoquest_api_token, ""
+  config :tako, TakoWeb.Endpoint, check_origin: false
 end

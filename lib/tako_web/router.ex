@@ -16,6 +16,7 @@ defmodule TakoWeb.Router do
     pipe_through(:api)
 
     forward "/accounts", Tako.Accounts.Router
+    resources "/leaderboard", TakoWeb.LeaderboardController, except: [:new, :edit, :show, :delete]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
