@@ -16,6 +16,7 @@ defmodule Tako.Accounts.User do
     define :update, action: :update
     define :destroy, action: :destroy
     define :get_by_id, args: [:id], action: :by_id
+    define :get_by_nickname, args: [:nickname], action: :by_nickname
   end
 
   json_api do
@@ -44,6 +45,10 @@ defmodule Tako.Accounts.User do
       # Filters the `:id` given in the argument
       # against the `id` of each element in the resource
       filter expr(id == ^arg(:id))
+    end
+
+    read :by_nickname do
+      get_by :nickname
     end
 
     update do
