@@ -48,6 +48,7 @@ defmodule Tako.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:cors_plug, "~> 3.0"},
+      {:expletive, "~> 0.1.0"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end

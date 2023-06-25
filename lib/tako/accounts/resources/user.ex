@@ -61,4 +61,8 @@ defmodule Tako.Accounts.User do
 
     attribute :stamps_collected, :integer, default: 0
   end
+
+  validations do
+    validate {Tako.Accounts.Resources.NicknameValidation, []}
+  end
 end
