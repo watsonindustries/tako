@@ -23,6 +23,12 @@ defmodule TakoWeb.NotificationsChannel do
     {:noreply, socket}
   end
 
+  @impl true
+  def handle_in("rally-completed", %{"nickname" => nickname} = _payload, socket) do
+    broadcast!(socket, "rally-completed", %{nickname: nickname})
+    {:noreply, socket}
+  end
+
   # Channels can be used in a request/response fashion
   # by sending replies to requests from the client
   @impl true
