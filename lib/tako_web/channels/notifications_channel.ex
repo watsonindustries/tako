@@ -12,7 +12,7 @@ defmodule TakoWeb.NotificationsChannel do
   end
 
   @impl true
-  def join("notifications:scans", _payload, socket) do
+  def join("notifications", _payload, socket) do
     {:ok, socket}
   end
 

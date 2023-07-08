@@ -7,7 +7,7 @@ defmodule TakoWeb.UserSocket do
   # assign values that can be accessed by your channel topics.
 
   ## Channels
-  channel "notifications:*", TakoWeb.NotificationsChannel
+  channel "notifications", TakoWeb.NotificationsChannel
   #
   # To create a channel file, use the mix task:
   #

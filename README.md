@@ -30,7 +30,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 Send a message payload to a specific user.
 
 ```elixir
-TakoWeb.Endpoint.broadcast("notifications:scans", "msg", %{user_id: "681adb8b-be3d-4fca-8858-2827609d9b22", message: "Testiiing"})
+TakoWeb.Endpoint.broadcast("notifications", "msg", %{user_id: "681adb8b-be3d-4fca-8858-2827609d9b22", message: "Testiiing"})
 ```
 
 ## Request authorization
