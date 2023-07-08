@@ -65,6 +65,9 @@ defmodule Tako.Accounts.User do
     attribute :nickname, :string, constraints: [max_length: 20]
 
     attribute :stamps_collected, :integer, default: 0
+
+    create_timestamp :inserted_at
+    update_timestamp :updated_at
   end
 
   validations do
