@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :tako, Tako.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "tako",
+  password: "tako",
   hostname: "localhost",
   database: "tako_dev",
   stacktrace: true,
